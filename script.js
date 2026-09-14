@@ -10,7 +10,7 @@ let profile = null;
    Contoh: "https://portfolio-backend-daffa.vercel.app"
    Backend-nya ada di folder /backend, deploy terpisah dari GitHub Pages ini.
    ========================================================================== */
-const API_BASE = "https://GANTI-DENGAN-URL-BACKEND-VERCEL.vercel.app";
+const API_BASE = "https://portfolio-eight-virid-je2suqvcy9.vercel.app";
 
 async function loadProfile() {
   const res = await fetch("profile.json", { cache: "no-store" });
