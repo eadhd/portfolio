@@ -1,0 +1,6 @@
+{
+  "name": "portfolio-backend-daffa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend serverless (Vercel) untuk chatbot AI Gemini di portfolio Daffa"
+}

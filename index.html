@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daffa — Portfolio</title>
+<meta name="description" content="Portfolio mahasiswa Informatika — dibungkus seperti git log.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2312141c'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%236ee7c5' font-family='monospace'%3E%E2%9D%AF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       BOOT SCREEN — satu momen animasi di awal (bukan hiasan berulang)
+       ============================================================ -->
+  <div class="boot" id="boot" aria-hidden="true">
+    <pre class="boot__log" id="bootLog"></pre>
+  </div>
+
+  <div class="app" id="app">
+
+    <!-- ============================================================
+         SIDEBAR — navigasi "branch" + status
+         ============================================================ -->
+    <header class="sidebar">
+      <a href="#main" class="sidebar__logo">
+        <span class="prompt">❯</span> <span id="handle">daffa.dev</span>
+      </a>
+
+      <nav class="branches" aria-label="Navigasi utama">
+        <p class="branches__label">branches</p>
+        <ul>
+          <li><a href="#main" class="branch active" data-target="main">main</a></li>
+          <li><a href="#about" class="branch" data-target="about">about</a></li>
+          <li><a href="#skills" class="branch" data-target="skills">skills</a></li>
+          <li><a href="#work" class="branch" data-target="work">work</a></li>
+          <li><a href="#contact" class="branch" data-target="contact">contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="status-block">
+        <p class="status-block__row">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="statusText">open to internship</span>
+        </p>
+        <p class="status-block__row muted" id="eduText">—</p>
+        <p class="status-block__row muted mono-small">
+          uptime <span id="uptime">00:00:00</span>
+        </p>
+      </div>
+
+      <div class="social">
+        <a id="socialGithub" href="#" target="_blank" rel="noopener">github</a>
+        <a id="socialLinkedin" href="#" target="_blank" rel="noopener">linkedin</a>
+        <a id="socialEmail" href="#">email</a>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         MAIN FEED — konten utama, ditampilkan sebagai "git log"
+         ============================================================ -->
+    <main class="feed">
+      <p class="feed__cmd mono-small">
+        $ git log --author=<span id="handleQuoted">"daffa.dev"</span> --stat
+      </p>
+
+      <!-- ===== commit 1 — hero / intro ===== -->
+      <section id="main" class="commit commit--hero">
+        <p class="commit__meta">
+          <span class="hash">a1f9c3d</span>
+          <span class="muted">chore(intro): initialize portfolio</span>
+        </p>
+        <div class="hero__row">
+          <div class="hero__content">
+            <h1 class="hero__name" id="heroName">Nama Kamu</h1>
+            <p class="hero__tagline" id="heroTagline">Tagline singkat tentang kamu.</p>
+            <p class="hero__bio-short" id="heroLede">—</p>
+            <div class="hero__actions">
+              <a href="#work" class="btn btn--primary">Lihat project</a>
+              <a href="#contact" class="btn btn--ghost">Hubungi saya</a>
+            </div>
+          </div>
+          <figure class="avatar-card">
+            <div class="avatar-frame">
+              <img class="avatar-img" id="avatarImg" src="" alt="" hidden>
+              <span class="avatar-fallback" id="avatarFallback" hidden></span>
+            </div>
+            <figcaption class="avatar-card__label mono-small" id="avatarLabel">avatar.jpg</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== commit 2 — about ===== -->
+      <section id="about" class="commit">
+        <p class="commit__meta">
+          <span class="hash">7b2e91f</span>
+          <span class="muted">feat(about): add background</span>
+        </p>
+        <h2>Tentang</h2>
+        <p id="aboutBio">—</p>
+        <div class="diffstat" id="aboutDiffstat"></div>
+      </section>
+
+      <!-- ===== commit 3 — skills ===== -->
+      <section id="skills" class="commit">
+        <p class="commit__meta">
+          <span class="hash">c4d0a2e</span>
+          <span class="muted">feat(skills): add tech stack</span>
+        </p>
+        <h2>Skills</h2>
+        <div class="skill-groups" id="skillGroups"></div>
+      </section>
+
+      <!-- ===== commit 4 — projects ===== -->
+      <section id="work" class="commit">
+        <p class="commit__meta">
+          <span class="hash">9f2b7d1</span>
+          <span class="muted">feat(projects): ship a few things</span>
+        </p>
+        <h2>Projects</h2>
+        <div class="projects" id="projectList"></div>
+      </section>
+
+      <!-- ===== commit 5 — contact ===== -->
+      <section id="contact" class="commit">
+        <p class="commit__meta">
+          <span class="hash">e6a48b0</span>
+          <span class="muted">docs(contact): update contact info</span>
+        </p>
+        <h2>Contact</h2>
+        <p>Terbuka untuk kesempatan magang, kolaborasi project, atau sekadar ngobrol soal kode.</p>
+        <ul class="contact-list" id="contactList"></ul>
+      </section>
+
+      <footer class="feed__footer mono-small muted">
+        dibangun dengan HTML/CSS/JS biasa — tanpa framework, tanpa build step.
+      </footer>
+    </main>
+
+    <!-- ============================================================
+         AI ASSISTANT — terminal chat mengambang
+         ============================================================ -->
+    <button class="ai-toggle" id="aiToggle" aria-expanded="false" aria-controls="aiPanel">
+      <span class="prompt">❯</span> ask-ai
+    </button>
+
+    <div class="ai-panel" id="aiPanel" role="dialog" aria-label="Asisten AI" hidden>
+      <div class="ai-panel__header">
+        <span class="mono-small" id="aiHeaderTitle">daffa-ai — bash</span>
+        <button class="ai-panel__close" id="aiClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="ai-panel__log" id="aiLog"></div>
+      <form class="ai-panel__input" id="aiForm">
+        <span class="prompt">❯</span>
+        <input type="text" id="aiInput" autocomplete="off" placeholder="tanya soal skill, project, atau kontak…" aria-label="Tulis pertanyaan">
+      </form>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

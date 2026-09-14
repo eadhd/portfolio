@@ -1,0 +1,40 @@
+{
+  "handle": "daffa.dev",
+  "avatar": "avatar.jpg",
+  "name": "Entol Akhmad Daffa Haidar Dzakir",
+  "tagline": "Mahasiswa Teknik Informatika, semester 7 — masih terus push commit baru.",
+  "status": "open to internship",
+  "education": "Teknik Informatika, Universitas Kebangsaan Republik Indonesia — semester 7",
+  "lede": "Membangun hal-hal kecil sampai jadi kebiasaan besar: dari tugas kuliah, project pribadi, sampai eksperimen yang kadang gagal (dan itu bagian dari proses belajar).",
+  "bio": "Saya mahasiswa Teknik Informatika yang tertarik pada pengembangan web dan software engineering secara umum. Suka membongkar cara kerja sesuatu, mencoba tools baru, dan menyelesaikan masalah nyata lewat kode — sekecil apa pun masalahnya. Sedang mencari kesempatan magang untuk belajar langsung di tim yang membangun produk sungguhan.",
+  "skills": {
+    "Bahasa": ["JavaScript", "Python", "Java", "SQL", "C++"],
+    "Framework & Library": ["React", "Node.js", "Express", "Tailwind CSS", "Bootstrap"],
+    "Tools": ["Git", "Docker", "Figma", "Linux"],
+    "Sedang dipelajari": ["Go", "System Design", "IOT"]
+  },
+  "projects": [
+    {
+      "name": "Donation.co",
+      "stack": ["React", "Node.js", "PostgreSQL", "bootstrap", "PHP", "Python"],
+      "description": "i was the frontend & beckend developer for this end-Term assignment ",
+      "stats": { "add": 120, "remove": 8 },
+      "demo": "https://drive.google.com/file/d/1g5nXbkvu3TUe-YbuLZ7R9-9-PAq9G6gO/view?usp=sharing",
+      "repo": "#"
+    },
+    {
+      "name": "Automatic Water Distribution System Using IOT",
+      "stack": ["Blynk", "C++"],
+      "description": "this a project from my KKN (Kuliah Kerja Nyata), where i was the lead System Engineer and IOT Developer",
+      "stats": { "add": 86, "remove": 4 },
+      "demo": "https://drive.google.com/drive/folders/13pckqPHq7lxCtAXKFzIc7y_wKH8ixR7K?usp=drive_link",
+      "repo": "#"
+    }
+  ],
+  "contact": {
+    "email": "daffahaidar119@gmail.com",
+    "github": "https://github.com/eadhd",
+    "linkedin": "https://linkedin.com/in/eadhd-b339061ab",
+    "whatsapp": ""
+  }
+}
